@@ -7,7 +7,7 @@ import getConfig from "./this/dynamic/getConfig.js";
 import { prefix, aeroPrefix, debug, flags } from "./config.js";
 
 // Utility
-import BareClient from "./this/misc/bare/dist/BareClient.js";
+import { createBareClient } from "./this/misc/bare/dist/BareClient.js";
 import ProxyFetch from "./this/misc/ProxyFetch.js";
 import sharedModule from "./this/misc/sharedModule.js";
 import getRequestUrl from "./this/misc/getRequestUrl.js";
