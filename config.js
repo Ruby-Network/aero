@@ -1,7 +1,7 @@
 const aeroPrefix = "/aero/";
 const prefix = "/go/";
 
-const backends = ["/fetch"];
+const backends = ["/bare/"];
 // Don't set these, if you are using bare
 const wsBackends = ["/fetchws"];
 const wrtcBackends = {
