@@ -84,8 +84,7 @@ async function handle(event) {
 			location.origin,
 			clientUrl,
 			path,
-			homepage,
-			iFrame
+			homepage
 		)
 	);
 
