@@ -5,7 +5,7 @@ import routes from "./this/internal/routes.js";
 import getConfig from "./this/dynamic/getConfig.js";
 // Standard Config
 import { prefix, aeroPrefix, debug, flags } from "./config.js";
-
+let hostUrl = location.protocol + '//' + location.host;
 // Utility
 import { createBareClient } from "./this/misc/bare/dist/BareClient.js";
 import ProxyFetch from "./this/misc/ProxyFetch.js";
@@ -42,13 +42,10 @@ async function handle(event) {
 	const afterPrefix = url =>
 		url.replace(new RegExp(`^(${location.origin}${prefix})`, "g"), "");
 
-	const useBare = BareClient || typeof BareClient === "function";
+	//const useBare = BareClient || typeof BareClient === "function";
 
 	// Construct proxy fetch instance
-	const proxyFetch = useBare
-		? // The bare client doesn't support proxy switching
-		  new BareClient(backends[0])
-		: new ProxyFetch(backends);
+	const proxyFetch = await createBareClient(`${hostUrl}/${backends[0]}`);
 
 	const reqUrl = new URL(req.url);
 
@@ -235,7 +232,6 @@ async function handle(event) {
 					debug: ${JSON.stringify(debug)},
 					flags: ${JSON.stringify(flags)},
 				},
-				useBare: ${useBare},
 				cors: ${JSON.stringify(injectHeaders)},
 				// This is used to later copy into an iFrame's srcdoc; this is for an edge case
 				imports: \`${unwrapImports(routes, true)}\`,
