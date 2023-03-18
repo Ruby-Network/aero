@@ -1,3 +1,13 @@
+# Changes made in this repo:
+
+- Start switching BareClient for createBareClient and update bare client in commit 48608d84490d4cc80f5d9856cbb1403292aa33aa
+- Finish up the switch of BareClient to createBareClient in commit 38cb94d20eab62d49f07ccb101ae26491f025e4e
+- Update the config to bare in commit f5d062c1b31c0c3a6298c21d6bc25767cadeda47
+- Fix a mistake I had made in commit 2ac094ab274938a278ff9b5c1f8f977f14f1ddff
+- And of course editing the README file (original readme below)
+
+---
+
 # aero
 
 Aero is a safe, developer friendly, and innovative interception proxy. Aero provides a good balance of excellent site support speed, while also having a clean and organized codebase. A deployable version can be found [here](https://github.com/ProxyHaven/aero-deploy)
