@@ -45,7 +45,7 @@ async function handle(event) {
 	//const useBare = BareClient || typeof BareClient === "function";
 
 	// Construct proxy fetch instance
-	const proxyFetch = await createBareClient(`${hostUrl}/${backends[0]}`);
+	const proxyFetch = await createBareClient(`${hostUrl}${backends[0]}`);
 
 	const reqUrl = new URL(req.url);
 
